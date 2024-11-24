@@ -189,14 +189,14 @@ body, html {
     left: 10rem;
     width: calc(100% - 10rem);
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+    background-color: rgba(0, 0, 0, 0.8); /* White background with slight transparency */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     z-index: 2;
-    color: #333; /* Professional dark-gray text */
+    color: white; /* Professional dark-gray text */
     font-family: Arial, sans-serif;
     padding: 2rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
@@ -236,7 +236,7 @@ body, html {
 
 .contact h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #333;
+    color: white;
     font-size: 2rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -301,9 +301,9 @@ body, html {
 
     .about {
         left: 0; /* Navbar is horizontal, no need for left margin */
-        top: 4.8rem; /* Adjust for horizontal navbar height */
+        top: 5rem; /* Adjust for horizontal navbar height */
         width: 100%; /* Full width */
-        height: calc(100% - 4rem); /* Avoid overlap with horizontal navbar */
+        height: calc(100% - 5rem); /* Avoid overlap with horizontal navbar */
     }
 
     .about-container {
@@ -317,7 +317,32 @@ body, html {
     .about p {
         font-size: 0.9rem;
     }
+
+    .contact {
+        left: 0; /* Navbar is horizontal, no need for left margin */
+        top: 5rem; /* Adjust for horizontal navbar height */
+        width: 100%; /* Full width */
+        height: calc(100% - 5rem); /* Avoid overlap with horizontal navbar */
+    }
+
+    .contact-container {
+        padding: 5rem;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
 }
 
+@media (max-width: 425px) {
 
+.splash {
+    background: url(../Images/Progress\ -\ Human\ and\ machine\ towards\ civilization.webp) no-repeat center center/cover;;
+}
+
+}
 
