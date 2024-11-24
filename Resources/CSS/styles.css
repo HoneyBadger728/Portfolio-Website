@@ -114,8 +114,8 @@ body, html {
 .about {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 10rem;
+    width: calc(100% - 10rem);
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
     display: flex;
@@ -173,6 +173,8 @@ body, html {
         padding: 2rem 1rem;
         background-color: rgba(0, 0, 0, 0.9); /* Slightly darker for contrast */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Shadow under the top navbar */
+        border-right: none;
+        border-bottom:  3px solid  #ffcc00;
     }
 
     .vertical-navbar .nav-links {
@@ -199,6 +201,13 @@ body, html {
 
     .splash-content h1 {
         font-size: 3.8vw;
+    }
+
+    .about {
+        left: 0; /* Navbar is horizontal, no need for left margin */
+        top: 4.8rem; /* Adjust for horizontal navbar height */
+        width: 100%; /* Full width */
+        height: calc(100% - 4rem); /* Avoid overlap with horizontal navbar */
     }
 
     .about h2 {
