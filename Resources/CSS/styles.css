@@ -32,7 +32,7 @@ body, html {
     color: white;
     max-width: 55%;
     z-index: 12;
-    transition: opacity 1.2s ease, visibility 0.8s ease;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
 .splash-content h1 {
@@ -128,7 +128,7 @@ body, html {
     font-family: Arial, sans-serif;
     padding: 2rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: opacity 1.2s ease, visibility 0.8s ease; /* Smooth appearance */
+    transition: opacity 1.2s ease, visibility 2s ease; /* Smooth appearance */
 }
 
 
@@ -181,6 +181,77 @@ body, html {
 .about.hidden {
     opacity: 0;
 }
+
+/* Contact Section */
+.contact {
+    position: absolute;
+    top: 0;
+    left: 10rem;
+    width: calc(100% - 10rem);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+    color: #333; /* Professional dark-gray text */
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: opacity 1.2s ease, visibility 2s ease; /* Smooth appearance */
+}
+
+.contact-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 8rem;
+}
+
+/* Orange Border (top left corner, 50% across and down) */
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 55%;
+    border-top: 8px solid #ffcc00; /* Orange border color */
+    border-left: 18px solid #ffcc00; /* Orange border color */
+}
+
+.contact-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 55%;
+    border-right: 18px solid #ffcc00;
+    border-bottom: 8px solid #ffcc00;
+}
+
+.contact h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.contact.hidden {
+    opacity: 0;
+}
+
 
 
 /* Responsive Design */
