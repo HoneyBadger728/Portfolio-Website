@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>This Human's Portfolio</title>
+        <title>Normal Human Portfolio</title>
        
         <link rel="stylesheet" href="./Resources/CSS/styles.css">
         <script src="https://kit.fontawesome.com/3f37e0bbfd.js" crossorigin="anonymous"></script>
@@ -13,18 +13,32 @@
         <!-- Navigation Bar -->
         <nav class="vertical-navbar">
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#splash" class="nav-link" onclick="showSplash()">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="showAbout()">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     
         <!-- Splash Section -->
-        <section class="splash">
+        <section id="splash" class="splash">
             <div class="splash-content">
                 <h1>
-                    I'm <span class="highlight">Blake,</span> normal human<span class="highlight">full stack developer</span>; helping <span class="highlight">humans</span> and <span class="highlight">machines</span> work towards a brighter future <span class="highlight">together</span>
+                    I'm <span class="highlight">Blake,</span> normal human<span class="highlight">full stack developer;</span> helping <span class="highlight">humans</span> and <span class="highlight">machines</span> work towards a brighter future <span class="highlight">together</span>
                 </h1>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about hidden">
+            <div class="about-container">
+                <h2>About Me</h2>
+                <p>
+                    Placeholder text for the About section. This is where you'll describe yourself, your work, and your passion for helping humans and machines work together for a better future.
+                </p>
+                <p>
+                    You can add information about your skills, experience, and vision. This section is customizable to fit your personal portfolio.
+                </p>
             </div>
         </section>
 
