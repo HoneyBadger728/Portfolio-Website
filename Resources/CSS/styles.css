@@ -8,7 +8,7 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     scroll-behavior: smooth;
 }
 
@@ -27,17 +27,18 @@ body, html {
 
 .splash-content {
     position: absolute;
-    top: 2vw; /* Positioning from the top of the image */
-    left: 3.5rem; /* Positioning from the left of the image */
+    top: 4rem; /* Positioning from the top of the image */
+    left: 1rem; /* Positioning from the left of the image */
     color: white;
-    max-width: 55%;
+    max-width: 65%;
     z-index: 12;
     transition: opacity 1.2s ease, visibility 1.2s ease;
+    line-height: 3rem;
 }
 
 .splash-content h1 {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 3rem;
+    
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
@@ -50,62 +51,57 @@ body, html {
         7px 7px 4px rgba(0, 0, 0, 0.9), /* Bold shadow */
         0 0 5px rgba(0, 0, 0, 1),
         0 0 10px rgba(255, 204, 0, 0.8); /* Glowing effect */
-    letter-spacing: 1.2px; /* Slight spacing for tech vibe */
-    
+    letter-spacing: 1px; /* Slight spacing for tech vibe */
     padding: 0.3rem 0.5rem;
     border-radius: 3px; /* Rounded edges for a polished look */
     display: inline-block;
-    transition: transform 0.3s ease; /* Add hover animation */
 }
 
-.splash-content .highlight:hover {
-    transform: scale(1.08);
-    text-shadow: 
-    3px 3px 6px rgba(0, 0, 0, 0.9),
-    0 0 8px rgba(255, 204, 0, 1); /* Enhanced glow on hover */
-}
+
 
 /* Navigation Bar */
-.vertical-navbar {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%; /* Full screen height */
-    width: 10rem; /* Fixed width */
-    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+    height: auto; /* Full screen height */
+    width: 100%; /* Fixed width */
+     /* Semi-transparent black */
     color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 1rem 0;
+    justify-content: flex-end;
+   
     z-index: 10; /* Ensure it stays on top */
-    border-right: 3px solid rgba(255, 204, 0, 0.7);
+    
 }
 
 
 
-.vertical-navbar .nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 3rem; /* Space between links */
+    flex-direction: row;
+    gap: 3.5rem; /* Space between links */
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 2rem;
 }
 
-.vertical-navbar .nav-links li {
+.navbar .nav-links li {
     text-align: center;
 }
 
-.vertical-navbar .nav-links a {
+.navbar .nav-links a {
     font-family: 'Orbitron', sans-serif;
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.4vw;
     transition: color 0.3s, transform 0.3s;
     letter-spacing: 0.3rem;
 }
 
-.vertical-navbar .nav-links a:hover {
+.navbar .nav-links a:hover {
     color: #ffcc00; /* Accent color */
     transform: scale(1.1); /* Enlarge slightly */
 }
@@ -114,9 +110,9 @@ body, html {
 .about {
     position: absolute;
     top: 0;
-    left: 10rem;
-    width: calc(100% - 10rem);
-    height: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
     display: flex;
     align-items: center;
@@ -186,9 +182,9 @@ body, html {
 .contact {
     position: absolute;
     top: 0;
-    left: 10rem;
-    width: calc(100% - 10rem);
-    height: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.8); /* White background with slight transparency */
     display: flex;
     align-items: center;
@@ -257,46 +253,49 @@ body, html {
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Navbar Adjustments */
-    .vertical-navbar {
+    .navbar {
         position: fixed;
         top: 0;
         left: 0;
-        height: auto;
+        height: 5rem;
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
-        padding: 2rem 1rem;
+        justify-content: center;
+        padding: 0rem 0rem;
         background-color: rgba(0, 0, 0, 0.9); /* Slightly darker for contrast */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Shadow under the top navbar */
         border-right: none;
         border-bottom:  2px solid  rgba(255, 204, 0, 0.7);;
     }
 
-    .vertical-navbar .nav-links {
+    .navbar .nav-links {
         flex-direction: row; /* Horizontal links */
         gap: 2rem;
+        justify-content: space-around;
+        width: 100%;
+        background-color: transparent;
     }
 
-    .vertical-navbar .nav-links li {
+    .navbar .nav-links li {
         text-align: right;
         
     }
 
-    .vertical-navbar .nav-links a {
+    .navbar .nav-links a {
         font-size: .8rem;
         letter-spacing: 0.2rem;
     }
 
     /* Splash Content Adjustments */
     .splash-content {
-        top: 2.8rem;
-        left: 1.5rem;
-        max-width: 38%;
+        top: 6rem;
+        max-width: 100%;
+        font-size: 1.8vw;
     }
 
     .splash-content h1 {
-        font-size: 3.8vw;
+        font-size: 5.8vw;
     }
 
     .about {
@@ -307,7 +306,8 @@ body, html {
     }
 
     .about-container {
-        padding: 5rem;
+        padding: 2rem;
+        width: 95%;
     }
 
     .about h2 {
@@ -326,7 +326,8 @@ body, html {
     }
 
     .contact-container {
-        padding: 5rem;
+        padding: 2rem;
+        width: 95%;
     }
 
     .contact h2 {
