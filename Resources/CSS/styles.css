@@ -342,7 +342,8 @@ body, html {
 @media (max-width: 425px) {
 
 .splash {
-    background: url(../Images/Progress\ -\ Human\ and\ machine\ towards\ civilization.webp) no-repeat center center/cover;;
+    background: url(../Images/Progress\ -\ Human\ and\ machine\ towards\ civilization.webp) no-repeat center center/cover;
+    height: 100vh;
 }
 
 }
