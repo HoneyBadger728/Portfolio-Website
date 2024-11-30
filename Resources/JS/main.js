@@ -1,5 +1,23 @@
-// Show the Splash content and hide the About section
-function showSplash() {
+const navLinks = document.querySelector('.nav-links');
+const navbarToggle = document.querySelector('.mobile-navbar-toggle');
+
+    navbarToggle.addEventListener("click", () => {
+
+        const visibility = navLinks.getAttribute("data-visible");
+
+        if (visibility === "false") {
+            navLinks.setAttribute("data-visible", true);
+            navbarToggle.setAttribute("aria-expanded", true);
+        } else if (visibility === "true") {
+            navLinks.setAttribute("data-visible", false);
+            navbarToggle.setAttribute("aria-expanded", false);
+        }
+    });
+
+
+    // Show the Splash content and hide the About section
+
+    function showSplash() {
     document.querySelector('.splash-content').style.opacity = '1';
     document.querySelector('.splash-content').style.visibility = 'visible';
     document.querySelector('.about').classList.add('hidden');
@@ -22,3 +40,6 @@ function showContact() {
     document.querySelector('.about').classList.add('hidden');
     document.querySelector('.contact').classList.remove('hidden');
 }
+
+
+

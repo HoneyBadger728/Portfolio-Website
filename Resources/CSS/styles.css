@@ -27,6 +27,10 @@ body, html {
     
 }
 
+.mobile-navbar-toggle {
+    display: none;
+}
+
 
 
 .navbar .nav-links {
@@ -35,6 +39,7 @@ body, html {
     flex-direction: row;
     gap: 5rem; /* Space between links */
     background-color: rgba(0, 0, 0, 0.9);
+    
     padding: 1.5rem 3.5rem;
 }
 
@@ -76,7 +81,7 @@ body, html {
     left: 2rem; /* Positioning from the left of the image */
     color: white;
     max-width: 80%;
-    z-index: 12;
+    z-index: 20;
     transition: opacity 1.2s ease, visibility 1.2s ease;
     line-height: 2.8vw;
 }
@@ -273,7 +278,7 @@ body, html {
         background-color: rgba(0, 0, 0, 0.9); /* Slightly darker for contrast */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Shadow under the top navbar */
         border-right: none;
-        border-bottom:  2px solid  rgba(255, 204, 0, 0.7);;
+        border-bottom:  3px solid  rgba(255, 204, 0, 0.7);
     }
 
     .navbar .nav-links {
@@ -356,13 +361,74 @@ body, html {
 
 @media (max-width: 425px) {
 
+
 .splash {
     background: url(../Images/Progress\ -\ Human\ and\ machine\ towards\ civilization.webp) no-repeat center center/cover;
     height: 100vh;
 }
 
-.navbar .nav-links {
+.navbar {
+    border: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    height: auto;
+    z-index: 50;
+}
 
+.mobile-navbar-toggle {
+    display: block;
+    position: absolute;
+    font-size: .35rem;
+    color: transparent;
+    background-image: url(../Images/burger-menu-svgrepo-com.svg);
+    background-size: contain;
+    background-color: #ffcc00;
+    opacity: 1;
+    border: none;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 500;
+}
+
+.mobile-navbar-toggle[aria-expanded="true"] {
+    background-image: url(../Images/close-1538-svgrepo-com.svg);
+}
+
+
+
+.navbar .nav-links {
+    position: fixed;
+    flex-direction: column;
+    gap: 1rem;
+    inset: 0 0 0 32%;
+    width: auto;
+    padding: min(30vh, 4rem) 2rem;
+    background: rgba(0, 0, 0, .70);
+    backdrop-filter: blur(.65rem);
+    border-left:  3px solid  rgba(255, 204, 0, 0.9);
+    transform: translateX(100%);
+    transition: transform 400ms ease-out;
+    
+}
+
+.nav-links[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.navbar .nav-links li {
+    text-align: center;
+}
+
+.about {
+    top: 0;
+    height: 100vh;
+}
+
+.contact {
+    top: 0;
+    height: 100vh;
 }
 
 }
