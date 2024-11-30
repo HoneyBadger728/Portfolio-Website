@@ -12,67 +12,17 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Splash Section */
-.splash {
-    background: url('../Images/Together - humans and machines with a bright future.webp') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    position: relative;
-}
-
-.splash-content {
-    position: absolute;
-    top: 4rem; /* Positioning from the top of the image */
-    left: 1rem; /* Positioning from the left of the image */
-    color: white;
-    max-width: 65%;
-    z-index: 12;
-    transition: opacity 1.2s ease, visibility 1.2s ease;
-    line-height: 3rem;
-}
-
-.splash-content h1 {
-    font-size: 3rem;
-    
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-.splash-content .highlight {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    color: #ffcc00; /* Accent color */
-    font-weight: 700;
-    text-transform: uppercase;
-    text-shadow: 
-        7px 7px 4px rgba(0, 0, 0, 0.9), /* Bold shadow */
-        0 0 5px rgba(0, 0, 0, 1),
-        0 0 10px rgba(255, 204, 0, 0.8); /* Glowing effect */
-    letter-spacing: 1px; /* Slight spacing for tech vibe */
-    padding: 0.3rem 0.5rem;
-    border-radius: 3px; /* Rounded edges for a polished look */
-    display: inline-block;
-}
-
-
-
 /* Navigation Bar */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
-    height: auto; /* Full screen height */
+    height: auto;
     width: 100%; /* Fixed width */
-     /* Semi-transparent black */
     color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-   
     z-index: 10; /* Ensure it stays on top */
     
 }
@@ -83,9 +33,9 @@ body, html {
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 3.5rem; /* Space between links */
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 2rem;
+    gap: 5rem; /* Space between links */
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem 3.5rem;
 }
 
 .navbar .nav-links li {
@@ -105,6 +55,60 @@ body, html {
     color: #ffcc00; /* Accent color */
     transform: scale(1.1); /* Enlarge slightly */
 }
+
+/* Splash Section */
+.splash {
+    background: url('../Images/Together - humans and machines with a bright future.webp') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: left;
+    position: relative;
+}
+
+.splash-content {
+    position: absolute;
+    top: 4rem; /* Positioning from the top of the image */
+    left: 2rem; /* Positioning from the left of the image */
+    color: white;
+    max-width: 65%;
+    z-index: 12;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+    line-height: 3rem;
+}
+
+.splash-content h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.splash-content h2 {
+    margin: 1rem;
+    text-align: center;
+    
+}
+
+.splash-content .highlight {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    color: #ffcc00; /* Accent color */
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 
+        7px 7px 4px rgba(0, 0, 0, 0.9), /* Bold shadow */
+        0 0 5px rgba(0, 0, 0, 1),
+        0 0 10px rgba(255, 204, 0, 0.8); /* Glowing effect */
+    letter-spacing: 1px; /* Slight spacing for tech vibe */
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px; /* Rounded edges for a polished look */
+    display: inline-block;
+}
+
+
+
+
 
 /* About Section */
 .about {
@@ -271,7 +275,7 @@ body, html {
 
     .navbar .nav-links {
         flex-direction: row; /* Horizontal links */
-        gap: 2rem;
+        gap: 1.5rem;
         justify-content: space-around;
         width: 100%;
         background-color: transparent;
@@ -289,13 +293,21 @@ body, html {
 
     /* Splash Content Adjustments */
     .splash-content {
-        top: 6rem;
-        max-width: 100%;
+        position: relative;
+        top: 1rem;
+        left: 0;
+        max-width: 90%;
         font-size: 1.8vw;
+        text-align: center;
     }
 
     .splash-content h1 {
-        font-size: 5.8vw;
+        font-size: 5.8vw; 
+        margin-top:  1rem;
+    }
+
+    .splash-content h2 {
+        margin: 0rem;
     }
 
     .about {
