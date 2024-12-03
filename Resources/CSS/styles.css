@@ -537,6 +537,11 @@ body, html {
     height: 100vh;
 }
 
+.projects {
+    top: 0;
+    height: 100vh;
+}
+
 .contact {
     top: 0;
     height: 100vh;
