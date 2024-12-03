@@ -85,9 +85,8 @@ body, html {
     position: absolute;
     top: 4.2rem; /* Positioning from the top of the image */
     left: 2rem; /* Positioning from the left of the image */
-    font-family: "VT323", monospace;
-    color: white;
-    max-width: 80%;
+    font-family: 'Orbitron', sans-serif;
+    max-width: 60%;
     z-index: 20;
     line-height: 2.8vw;
     transition: opacity 2s ease, visibility 2s ease;
@@ -95,34 +94,27 @@ body, html {
 
 .splash-content h1 {
     font-size: 3.3vw;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    color: #ffcc00;
     font-weight: 800;
+    letter-spacing: 1px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
 }
 
 .splash-content h2 {
     font-size: 2.2vw;
-    margin: 1.2rem 1rem;
-    text-align: center;
-    
-}
-
-.splash-content .highlight {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    color: #ffcc00; /* Accent color */
-    font-weight: 600;
-    text-transform: uppercase;
-    text-shadow: 
-        7px 7px 4px rgba(0, 0, 0, 0.9), /* Bold shadow */
-        0 0 5px rgba(0, 0, 0, 1),
-        0 0 10px rgba(255, 204, 0, 0.8); /* Glowing effect */
-    letter-spacing: 1px; /* Slight spacing for tech vibe */
-    padding: 0.3rem 0.5rem;
-    border-radius: 3px; /* Rounded edges for a polished look */
-    display: inline-block;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    margin: 1rem;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 
-
+.splash-content h2.visible {
+    opacity: 1;
+}
 
 
 /* About Section */
