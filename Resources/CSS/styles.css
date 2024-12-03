@@ -378,24 +378,45 @@ body, html {
 .mobile-navbar-toggle {
     display: block;
     position: absolute;
-    font-size: .35rem;
-    color: transparent;
-    background-image: url(../Images/burger-menu-svgrepo-com.svg);
-    background-size: contain;
-    background-color: #ffcc00;
-    opacity: 1;
-    border: none;
-    width: 2rem;
+    width: 2.3rem;
     aspect-ratio: 1;
     top: 2rem;
     right: 2rem;
+    border: 2px solid black;
+    background-color: #ffcc00;
+    cursor: pointer;
     z-index: 500;
 }
 
-.mobile-navbar-toggle[aria-expanded="true"] {
-    background-image: url(../Images/close-1538-svgrepo-com.svg);
+.icon {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    line-height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: opacity 400ms ease;
+    margin: .1rem;
 }
 
+.icon.default {
+    background-image: url(../Images/burger-menu-svgrepo-com.svg);
+    opacity: 1;
+}
+
+.icon.active {
+    background-image: url(../Images/close-1538-svgrepo-com.svg);
+    opacity: 0;
+}
+
+
+.mobile-navbar-toggle[aria-expanded="true"] .icon.default {
+    opacity: 0;
+}
+
+.mobile-navbar-toggle[aria-expanded="true"] .icon.active {
+    opacity: 1;
+}
 
 
 .navbar .nav-links {
