@@ -20,6 +20,7 @@ const navbarToggle = document.querySelector('.mobile-navbar-toggle');
     function showSplash() {
         document.querySelector('.splash-content').classList.remove('hidden');
         document.querySelector('.about').classList.add('hidden');
+        document.querySelector('.projects').classList.add('hidden');
         document.querySelector('.contact').classList.add('hidden');
     }
     
@@ -27,14 +28,25 @@ const navbarToggle = document.querySelector('.mobile-navbar-toggle');
     function showAbout() {
         document.querySelector('.splash-content').classList.add('hidden');
         document.querySelector('.about').classList.remove('hidden');
+        document.querySelector('.projects').classList.add('hidden');
         document.querySelector('.contact').classList.add('hidden');
     
+    }
+
+    // Show the Projects section and hide others
+    function showProjects() {
+        document.querySelector('.splash-content').classList.add('hidden');
+        document.querySelector('.about').classList.add('hidden');
+        document.querySelector('.projects').classList.remove('hidden');
+        document.querySelector('.contact').classList.add('hidden');
+        
     }
     
     // Show the Contact section and hide the About section
     function showContact() {
         document.querySelector('.splash-content').classList.add('hidden');
         document.querySelector('.about').classList.add('hidden');
+        document.querySelector('.projects').classList.add('hidden');
         document.querySelector('.contact').classList.remove('hidden');
     }
     
@@ -61,7 +73,7 @@ const text2 = splashH2.textContent;
 
     textTypingEffect(splashH1, text1, 100, 0, () => {
         splashH2.classList.add("visible");
-        textTypingEffect(splashH2, text2, 40);
+        textTypingEffect(splashH2, text2, 50);
              
        
     });
