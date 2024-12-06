@@ -50,30 +50,36 @@ const navbarToggle = document.querySelector('.mobile-navbar-toggle');
         document.querySelector('.contact').classList.remove('hidden');
     }
     
-const splashH1 = document.querySelector(".splash-content h1");
-const splashH2 = document.querySelector(".splash-content h2")
-const text1 = splashH1.textContent; 
-const text2 = splashH2.textContent;
-
-    function textTypingEffect(element, text, speed, i = 0, callback = null) {
+    const splashH1 = document.querySelector(".splash-content h1");
+    const splashH2 = document.querySelector(".splash-content h2");
+    const text1 = splashH1.textContent; 
+    const text2 = splashH2.textContent;
+    
+    function textTypingEffect(element, text, speed, initialDelay = 0, i = 0, callback = null) {
         if (i === 0) {
-            element.textContent = "";
+            element.textContent = ""; // Clear content before starting
         }
-        
-        element.textContent += text[i]
-
-        if (i === text.length - 1) {
-            if (callback) callback();
-            return;
-        }
-
-        setTimeout(() => textTypingEffect(element, text, speed, i + 1, callback), speed);
-
+    
+        // Delay before starting the typing effect
+        setTimeout(() => {
+            element.textContent += text[i];
+    
+            if (i === text.length - 1) {
+                if (callback) callback(); // Trigger the callback if provided
+                return;
+            }
+    
+            // Recursive call to continue typing
+            setTimeout(() => textTypingEffect(element, text, speed, 0, i + 1, callback), speed);
+        }, initialDelay); // Delay before the first character starts
     }
-
-    textTypingEffect(splashH1, text1, 100, 0, () => {
-        splashH2.classList.add("visible");
-        textTypingEffect(splashH2, text2, 50);
-             
-       
+    
+    // Set a delay for the first typing effect
+    const initialDelayH1 = 1200; // 2-second delay for the H1 element
+    const initialDelayH2 = 1200; // 1-second delay for the H2 element
+    
+    textTypingEffect(splashH1, text1, 100, initialDelayH1, 0, () => {
+        splashH2.classList.add("visible"); // Make H2 visible
+        textTypingEffect(splashH2, text2, 50, initialDelayH2); // Add delay for H2 as well
     });
+    
