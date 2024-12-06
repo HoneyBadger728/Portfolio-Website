@@ -37,7 +37,7 @@ body, html {
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 5rem; /* Space between links */
+    gap: 6rem; /* Space between links */
     background-color: rgba(0, 0, 0, 0.9);
     
     padding: 1.5rem 3.5rem;
@@ -48,18 +48,36 @@ body, html {
 }
 
 .navbar .nav-links a {
+    position: relative;
     font-family: 'Orbitron', sans-serif;
     font-weight: 800;
     text-decoration: none;
     color: white;
     font-size: 1.4vw;
-    transition: color 0.3s, transform 0.3s;
-    letter-spacing: 0.3rem;
+    cursor: pointer;
+    padding: .01em .5em;
+    letter-spacing: 0.3em;
+    transition: color 0.6s, transform 0.3s;
 }
 
-.navbar .nav-links a:hover {
+.navbar .nav-links a::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    background: currentColor;
+    top: 75%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    transform: perspective(1em) rotateX(40deg) scale(1, .25);
+    filter: blur(.65em);
+    
+}
+
+.navbar .nav-links a:hover, .navbar .nav-links a:focus {
     color: #ffcc00; /* Accent color */
-    transform: scale(1.1); /* Enlarge slightly */
+    
 }
 
 .hidden {
@@ -292,6 +310,7 @@ body, html {
     width: 100%;
     height: 100%;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 1s ease, transform 1s ease; 
 }
@@ -299,7 +318,7 @@ body, html {
 .item-info h2 {
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
-    font-size: 1.8rem;
+    font-size: 1.9vw;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffcc00;
     
@@ -307,6 +326,7 @@ body, html {
 
 .item:hover .item-info {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
     backdrop-filter: blur(.40rem);
 }
@@ -343,33 +363,24 @@ body, html {
 /* Style the .button class inside .item-info */
 .item-info .button {
     display: inline-block;
-    padding: 12px 25px;
+    padding: .4em .8em;
     border-radius: 8px;
-    background-color: #f39c12; /* Example: blue background */
-    color: black;
+    border: 1px solid #f39c00; /* Example: blue background */
+    color: #f39c00;
+    background: black;
     text-decoration: none; /* Remove underline from links */
-    font-size: 16px;
+    font-size: 1vw;
     font-weight: bold;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for the button */
-.item-info .button:hover {
-    background-color: #f39c12; /* Darker blue on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
 
-/* Active effect (when clicked) */
-.item-info .button:active {
-    background-color: white; /* Even darker blue */
-    transform: translateY(0); /* No raise on click */
-}
 
 /* Focused state (for accessibility) */
-.item-info .button:focus {
-    outline: 3px solid #f39c12  ; /* Yellow outline for focus */
-    outline-offset: 2px;
+.item-info .button:hover, .item-info .button:focus {
+    
+    box-shadow: inset 0 0 .7em 0 currentColor, 0 0 1em 0 currentColor;
 }
 
 
@@ -529,11 +540,12 @@ body, html {
         top: 5rem; /* Adjust for horizontal navbar height */
         width: 100%; /* Full width */
         height: calc(100% - 5rem); /* Avoid overlap with horizontal navbar */
+        padding: 0.5rem;
     }
 
     .projects-container {
-        padding: 2rem;
-        width: 95%;
+        padding: 1.8rem;
+        width: 100%;
         grid-template-rows: repeat(3, 33.3%);
         grid-template-columns: repeat(2, 50%);
         grid-template-areas: 
@@ -544,13 +556,21 @@ body, html {
         ;
     }
 
-    .projects h2 {
-        font-size: 1.5rem;
+    .item-info .button {
+        font-size: 1.6vw;
     }
 
-    .projects p {
-        font-size: 1.5rem;
+    .projects h2 {
+        font-size: 2.2vw;
     }
+
+
+    .item2 .item-info {
+        flex-direction: column;
+    }
+    
+
+    
 
     .contact {
         left: 0; /* Navbar is horizontal, no need for left margin */
