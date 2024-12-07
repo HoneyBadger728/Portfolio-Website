@@ -409,9 +409,14 @@ body, html {
 
 .contact-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 80%;
+    height: 80%;
     margin: auto;
-    padding: 8rem;
+    padding: 3.5rem;
 }
 
 /* Orange Border (top left corner, 50% across and down) */
@@ -443,20 +448,29 @@ body, html {
     font-family: 'Orbitron', sans-serif;
     color: white;
     font-size: 2.5vw;
-    margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
 .contact p {
     font-size: 1.5vw;
-    line-height: 1.6;
-    margin: 2rem;
+    line-height: 1.6; 
 }
 
 .contact a {
     color: white;
 }
 
+.contact .tech-icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact .tech-icon {
+    width: clamp(2.3rem, 3.8vw, 3.8rem);
+}
 
 
 /* Responsive Design */
