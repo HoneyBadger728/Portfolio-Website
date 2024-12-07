@@ -49,6 +49,20 @@ const navbarToggle = document.querySelector('.mobile-navbar-toggle');
         document.querySelector('.projects').classList.add('hidden');
         document.querySelector('.contact').classList.remove('hidden');
     }
+
+    // Select all nav links
+const activeNavLink = document.querySelectorAll('.nav-links a');
+
+activeNavLink.forEach(link => {
+    link.addEventListener('click', () => {
+        // Remove 'active' class from all links
+        activeNavLink.forEach(nav => nav.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        link.classList.add('active');
+    });
+});
+
     
     const splashH1 = document.querySelector(".splash-content h1");
     const splashH2 = document.querySelector(".splash-content h2");
